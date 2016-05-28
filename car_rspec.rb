@@ -178,15 +178,15 @@ describe Garage do
     expect(my_garage.collection.sort {|car, car2| car.model.to_s <=> car2.model.to_s}).to eq my_garage.sort_by_model
   end
 
-  it "can be sorted by model then year" do
-    my_garage = Garage.new
-    my_garage.add_car(tesla_one = Tesla.new(2014))
-    my_garage.add_car(tesla_two = Tesla.new(2016))
-    my_garage.add_car(tata_one = Tata.new(2009))
-    my_garage.add_car(tata_two = Tata.new(2006))
-    my_garage.add_car(toyota_one = Toyota.new(2012))
-    my_garage.add_car(toyota_two = Toyota.new(2002))
-
-    expect(my_garage.collection.sort {|car, car2| car.model.to_s + car.year <=> car2.model.to_s + car2.year}).to eq my_garage.sort_by_model_year
-  end
+  # it "can be sorted by model then year" do
+  #   my_garage = Garage.new
+  #   my_garage.add_car(tesla_one = Tesla.new(2014))
+  #   my_garage.add_car(tesla_two = Tesla.new(2016))
+  #   my_garage.add_car(tata_one = Tata.new(2009))
+  #   my_garage.add_car(tata_two = Tata.new(2006))
+  #   my_garage.add_car(toyota_one = Toyota.new(2012))
+  #   my_garage.add_car(toyota_two = Toyota.new(2002))
+  #
+  #   expect(my_garage.collection.sort {|car, car2| car.model.to_s + car.year <=> car2.model.to_s + car2.year}).to eq my_garage.sort_by_model_year
+  # end
 end

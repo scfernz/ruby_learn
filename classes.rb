@@ -14,6 +14,7 @@ class Vehicle
   end
 
   # method to change lights_on
+  # to turn lights on set lights_on equal to true
   def lights_on=(new_lights_on)
     @lights_on = new_lights_on
   end
@@ -24,24 +25,33 @@ class Vehicle
   end
 
   # returns the value of speed
+  # speed initializes at zero
   def check_speed
     @speed
   end
 
   # increments speed by 8
+  # can be called and modified in other classes
+  # initial speed will always be zero
   def accelerate
     @speed += 8
   end
 
   # decrements speed by 4
+  # can be called and modified in other classes
+  # initial speed will always be zero
   def slow_down
     @speed -= 4
   end
 
+  # returns year that is set in the initialize method
+  # turns year to string
   def year
     @year.to_s
   end
 
+  # returns model that is set by class
+  # turns model to string
   def model
     self.class.to_s
   end
@@ -55,7 +65,7 @@ class Vehicle
   def check_vehicle_class
     self.model + ' ' + self.year
   end
-end
+end # end of vehicle class
 
 # Create class Car which inherits methods and initialization of vehicle
 # Signature: Accepts parameter (year)
@@ -69,39 +79,46 @@ class Car < Vehicle
   def check_wheels_number_car
     @wheels
   end
-end
+end # end of car class
 
 # creates class motorcycle which inherits methods and
 # initialization of vehicle
 class Motorcycle < Vehicle
+
+  # indentifies the nomber of wheels for the given vehicle
   def wheels
     @wheels = 2
   end
 
+  # returns the number of wheels for the given vehicle
   def check_wheels_number_motorcycle
     @wheels
   end
 
+  # method that increases the speed of motorcycle by 25
   def accelerate
     @speed += 25
   end
 
+  # method that decreases the speed of motorcycle by 10
   def slow_down
     @speed -= 10
   end
 
-end
+end # end of motorcycle class
 
 # Create class Tesla which inherits methods and initialization of class Car
 class Tesla < Car
+  # method that increases the speed of tesla by 10
   def accelerate
     @speed += 10
   end
 
+  # method that decreses the speed of tesla by 7
   def slow_down
     @speed -= 7
   end
-end
+end # end of tesla class
 
 # Create class Tata which inherits methods and initialization of class Car
 class Tata < Car
