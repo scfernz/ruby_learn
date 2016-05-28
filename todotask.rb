@@ -15,12 +15,16 @@
 require_relative 'task'
 require 'date'
 
-class ToDoTask
+class ToDoTask < Task
   def due_date(year,month,day)
     @due_date = Date.new(year,month,day)
   end
 
   def due_date?
     @due_date
+  end
+
+  def field_label
+    @field_label = "Title: #{@title}" + "\n" + "Description: #{@description}" + "\n" + "Due: #{@due_date}"
   end
 end

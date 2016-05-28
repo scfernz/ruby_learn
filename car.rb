@@ -108,7 +108,7 @@ class Garage
     @collection = @collection.sort {|car, car2| car.model.to_s <=> car2.model.to_s }
   end
 
-  def sort_by_model_year
-    @collection = @collection.sort { |car, car2| car.model.to_s + car.year <=> car2.model.to_s + car2.year}
-  end
+  # def sort_by_model_year
+  #   @collection = @collection.sort { |car, car2| car.model.to_s + car.year <=> car2.model.to_s + car2.year}
+  # end
 end

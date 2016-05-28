@@ -5,28 +5,28 @@ class Task
   end
 
   # Story: As a developer, I can give a Task a title
-  def make_title(new_title)
+  def title=(new_title)
     @title = new_title
   end
 
   # Story: As a developer, I can retrieve a task
-  def show_title
+  def title
     @title
   end
 
   # Story: As a developer, I can give a Task a description
-  def make_description(new_description)
+  def description=(new_description)
     @description = new_description
   end
 
   # Story: As a developer, I can retrieve a task description.
-  def show_description
+  def description
     @description
   end
 
   # Story: As a developer, I can print a Task with field labels and values.
   def field_label
-    @field_label = "#{@title}" + ' - ' + "#{@description}"
+    @field_label = "Title: #{@title}" + "\n" + "Description: #{@description}"
   end
 
   # Story: As a developer, I can mark a Task done.
